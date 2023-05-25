@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bunga Untuk Afieka</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="flower-container">
+        <div class="flower"></div>
+      </div>
+
+      <div class="text-container">
+        <div class="rotating-text">
+          <span class="blinking-text"
+            >These are flowers for you, hope you are happy with the people you
+            love</span
+          >
+        </div>
+        <div class="rotate-box">
+          <div class="rotate-box-body">
+            <div class="rotate">Afiekazain</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://4kwallpapers.com/images/wallpapers/rose-flower-red-1920x1200-10851.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .flower-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .flower {
+        width: 100px;
+        height: 100px;
+        background-color: #be1067;
+        position: relative;
+        animation: spin 4s linear infinite;
+      }
+
+      .flower:before,
+      .flower:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      .flower:before {
+        background-color: #fff;
+        top: -50%;
+        left: -50%;
+      }
+
+      .flower:after {
+        background-color: #be1067;
+        top: 50%;
+        left: -50%;
+      }
+
+      .text-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+      }
+
+      .rotating-text {
+        animation: rotate 10s linear infinite;
+      }
+
+      .rotating-text span {
+        font-size: 30px;
+        font-weight: bold;
+        color: #be1067;
+      }
+
+      .blinking-text {
+        animation: blink 1s linear infinite;
+      }
+
+      .rotate-box {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        padding: 15px;
+        perspective: 400px;
+        height: 300px;
+      }
+
+      .rotate-box .rotate-box-body {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+
+      .rotate-box .rotate-box-body .rotate {
+        position: relative;
+        top: 60%;
+        font-family: cursive;
+        font-size: 60px;
+        color: #fa5780;
+        text-shadow: 3px 4px #c1c1c1;
+        text-transform: uppercase;
+        font-weight: bold;
+        animation-name: rotate;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 10s;
+        margin: 35px 0px;
+        animation: blink 1s linear infinite;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(-360deg);
+        }
+      }
+
+      @-webkit-keyframes rotate {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(-360deg);
+        }
+      }
+
+      @-moz-keyframes rotate {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(-360deg);
+        }
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @media (max-width: 768px) {
+        .flower {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    </style>
+  </body>
+</html>
